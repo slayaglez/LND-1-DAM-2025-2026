@@ -4,15 +4,23 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		<form action="url" method="post">
+		<form action="http://lnd.angelmelchor.pro/test.php" method="post" enctype="multipart/form-data">
 			<label for="Nombre">Nombre : </label>
 			<input type="text" id="Nombre" name="var1">
 			<br>
 			<label for="Fecha">Fecha : </label>
-			<input type="text" id="Fecha" name="var2">
+			<input type="date" id="Fecha" name="var2">
 			<br>
 			<br>
-			<input type="submit" value="Enviar" style="background-color:#22DD22;">
 	
+			<select name="var3">
+				<option value="Volvo">Volvo</option>
+				<option value="Honda">Honda</option>
+				<option value="Citroen">Citroen</option>
+				<option value="Toyota">Toyota</option>
+			</select>
+			<input type="file" name="foto">
+			<input type="submit" value="Enviar" style="background-color:#22DD22;">
+		</form>
 	</body>
 </html>
