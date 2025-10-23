@@ -45,8 +45,11 @@ body {
 }
 #opciones{
     display: flex;
+    display: block;
 }
-#opciones>div{
+#opciones>a{
+
+    display: block;
     margin: 20px;
     padding-left: 80px;
     padding-right:80px;
