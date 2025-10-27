@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Cuestionario</title>
+        <meta charset="UTF-8">
+        <style>
+		
+ 	    @font-face {
+	        font-family: 'Roboto';
+	        src: url(fonts/Roboto/Roboto/static/Roboto-Regular.ttf);
+					            }
+            h2{
+                font-family: Roboto;
+		font-size:30px;
+            }
+
+            body{
+                background-color: azure;
+            	display:flex;
+		padding-top:10%;
+		justify-content: center;
+	    }
+
+            #formulario{
+                padding: 1em;
+                background-color: white;
+                width: 20%;
+                border: 2px solid black;
+		
+            }
+
+            .botonenviar{
+                background-color: rgb(228, 194, 41);
+                border: 1px solid black;
+                padding: 15px;
+                width: 100%;
+            }
+
+            label{
+                font-family: Roboto;
+                margin-top: 2em;
+                padding-bottom: 2em;
+                width:120px;
+		font-style:bold;
+            }
+            
+            .inputBox{
+                width: 100%;
+                height: 32px;
+                border-radius: 5px;
+            }
+            
+            .entrada{
+                margin-bottom: 7px;
+            }
+
+            .botonenviar{
+                font-family: Arial;
+		font-size:15px;
+                border-radius: 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="formulario">
+            <form action="http://lnd.angelmelchor.pro/test.php" method="post" enctype="multipart/form-data">
+		    <h2><b>Crear cuenta</b></h2>
+                <div class="entrada">
+                    <label for="name">Nombre</label>
+                    <br>
+                    <input type="text" id="name" name="var1" class="inputBox">
+                    <br>
+                </div>
+                
+                <div class="entrada">
+                    <label for="email">Correo electrónico</label>
+                    <br>
+                    <input type="text" id="email" name="var2" class="inputBox">
+                    <br>
+                </div>
+
+                <div class="entrada">
+                    <label for="contra">Contraseña</label>
+                    <br>
+                    <input type="text" id="contra" name="var3" class="inputBox">
+                    <br>
+                </div>
+
+                <div class="entrada">
+                    <label for="contra1">Confirma tu contraseña</label>
+                    <br>
+                    <input type="text" id="contra1" name="var3" class="inputBox">
+                    <br>
+                </div>
+                
+                <br>
+                <br>
+                <input type="submit" value="Crear tu cuenta" class="botonEnviar">
+
+
+            </form>
+        </div>
+    </body>
+
+</html>
