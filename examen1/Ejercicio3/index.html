@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Ejercicio3</title>
+        <meta charset="UTF-8">
+        <style>
+            form{
+                border:1px solid black;
+                padding: 0.5em;
+            }
+            body>div{
+                display: inline-block;
+                
+            }
+            div div{
+                margin-bottom: 1em;
+            }
+            label{
+                margin-right: 5px;
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Córtate Un Poco</h1>
+            <h3>Reserva</h3>
+            <form method="get" action="enunciados/test.php">
+                <div>
+                    <label for="nombre">Nombre: </label>
+                    <input id="nombre" type="text" name="var1" placeholder="Introduce tu nombre" required>
+                </div>
+                <div>
+                    <label for="email">Email: </label>
+                    <input id="email" type="email" name="var2" placeholder="Introduce tu correo" required>
+                </div>
+                <div>
+                    <label for="fecha">Fecha: </label>
+                    <input id="fecha" type="date" name="var3" required>
+                </div>
+                <div>
+                    <select name="var4">
+                        <option>Alejandro</option>
+                        <option>Silvia</option>
+                        <option>Elvira</option>
+                        <option>Juan</option>
+                    </select>   
+                </div>
+                <div>
+                    <select name="var5">
+                        <option>Tarde</option>
+                        <option>Mañana</option>
+                    </select>   
+                </div>
+                <input id="enviar" type="image" src="enunciados/tiny.jpg">
+            </form>
+        </div>
+        <form method="post" action="enunciados/test.php" enctype="multipart/form-data">
+            <input type="file" name="foto">
+            <br>
+            <input type="submit">
+        </form>
+
+    </body>
+</html>
