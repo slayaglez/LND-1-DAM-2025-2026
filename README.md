@@ -7,6 +7,7 @@ Todas las actividades de la asignatura lenguaje de marcas estarán aquí listada
 
 ## Actividades
 <hr>
+
 ### Actividad 1
 HTML básico, los primeros encabezados, imágenes y divs
 
