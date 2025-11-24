@@ -6,7 +6,6 @@ Todas las actividades de la asignatura lenguaje de marcas estarán aquí listada
 <br>
 
 ## Actividades
-<hr>
 
 ### Actividad 1
 HTML básico, los primeros encabezados, imágenes y divs
@@ -24,6 +23,6 @@ HTML y CSS básico, **formularios** con la etiqueta `<form>` y método POST
 HTML y CSS, usamos propiedad `flex` y etiqueta `<grid>` con un diseño basado en filas y columnas.
 
 ## Exámenes
-<hr>
+
 ### Examen 1 | 30 Oct 2025
 9.2/10 (por corregir)
