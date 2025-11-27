@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <style>
+
+            div{
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <label for="fecha">Introduzca la fecha</label>
+            <input id="fecha" type="date">
+
+        </div>
+        <div>
+            <button onclick="diaSemanaH3()" id="diaSemana">Día de la semana</button>
+        </div>
+        <div id="elegido">
+            <h3 id="respuesta"></h3>
+        </div>
+
+        <script>
+            function diaSemanaH3(){
+                const dias=["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "śabado"];
+                const meses=["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+                const fecha = new Date(document.getElementById("fecha").value);
+                const salida= "El día "+fecha.getDate()+" de "+meses[fecha.getMonth()] + " es "+dias[fecha.getDay()];
+                document.getElementById("respuesta").innerText=salida;
+            }
+            
+        </script>
+    </body>
+</html>
