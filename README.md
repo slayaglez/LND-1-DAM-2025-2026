@@ -22,6 +22,9 @@ HTML y CSS básico, **formularios** con la etiqueta `<form>` y método POST
 ### Actividad 5
 HTML y CSS, usamos propiedad `flex` y etiqueta `<grid>` con un diseño basado en filas y columnas.
 
+### Actividad 6
+Empezamos con JavaScript haciendo programas sencillos como calcular el M.C.D.
+
 ## Exámenes
 
 ### Examen 1 | 30 Oct 2025
