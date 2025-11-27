@@ -14,6 +14,8 @@
             <p>párrafo 4</p>
         </div>
         <script>
+            let contador=0;
+            const colores=["yellow", "red", "green", "cyan"];
             function passwd(){
                 const elemento=document.getElementById("entrada");
                 const listabotones=document.getElementsByTagName("button")
@@ -34,6 +36,12 @@
                 nuevo.innerText="Hola, soy el nuevo párrafo";
                 let elegido=document.getElementById("elegido");
                 elegido.insertAdjacentElement("beforebegin", nuevo);
+                
+                nuevo.style.backgroundColor=colores[contador];
+                contador++;
+                if(contador == 4){
+                    contador =0;
+                }
             }
         </script>
     
