@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>JS</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input id="entrada" type="password">
+        <br>
+        <button onclick="passwd()">Ver contraseña</button>
+        <script>
+            function passwd(){
+                const elemento=document.getElementById("entrada");
+                const listabotones=document.getElementsByTagName("button")
+                
+                switch(elemento.type){
+                    case "text":
+                    elemento.type="password";
+                    listabotones[0].style.backgroundColor="green";
+                    break;
+                    case "password":
+                    elemento.type="text";
+                    listabotones[0].style.backgroundColor="red";
+                    break;
+                    default: break;
+                }
+            }
+        </script>
+    
+    
+    </body>
+</html>
