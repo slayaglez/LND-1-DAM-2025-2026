@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>JS</title>
+        <meta charset="UTF-8">
+        <style>
+            div{
+                background-color: lightblue;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <input id="entrada" type="password">
+        <br>
+        <button onclick="passwd()">Ver contraseña</button>
+        <div id="elegido">
+            <p>párrafo 1</p>
+            <p>párrafo 2</p>
+            <p>párrafo 3</p>
+            <p>párrafo 4</p>
+        </div>
+        <script>
+            let contador=0;
+            const colores=["yellow", "red", "green", "cyan"];
+            function passwd(){
+                const elemento=document.getElementById("entrada");
+                const listabotones=document.getElementsByTagName("button")
+                
+                switch(elemento.type){
+                    case "text":
+                    elemento.type="password";
+                    listabotones[0].style.backgroundColor="green";
+                    break;
+                    case "password":
+                    elemento.type="text";
+                    listabotones[0].style.backgroundColor="red";
+                    break;
+                    default: break;
+                }
+
+                let nuevo=document.createElement("h3");
+                nuevo.innerText="Hola, soy el nuevo párrafo";
+                let elegido=document.getElementById("elegido");
+                elegido.insertAdjacentElement("afterbegin", nuevo);
+                
+                nuevo.style.color=colores[contador];
+                contador++;
+                if(contador == 4){
+                    contador =0;
+                }
+            }
+        </script>
+    
+    
+    </body>
+</html>
