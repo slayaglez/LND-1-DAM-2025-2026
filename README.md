@@ -23,7 +23,7 @@ HTML y CSS básico, **formularios** con la etiqueta `<form>` y método POST
 HTML y CSS, usamos propiedad `flex` y etiqueta `<grid>` con un diseño basado en filas y columnas.
 
 ### Actividad 6
-Empezamos con JavaScript haciendo programas sencillos como calcular el M.C.D. o mostrar contraseña.
+Empezamos con JavaScript haciendo programas sencillos como calcular el **M.C.D**, mostrar y ocultar una contraseña o mostrar el **día de la semana** dada una fecha.
 
 ## Exámenes
 
