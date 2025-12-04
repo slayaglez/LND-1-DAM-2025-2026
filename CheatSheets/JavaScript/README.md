@@ -44,4 +44,3 @@
 | `padre.insertAdjacentElement("beforeend", nuevo_elemento);`                                       | Añade el **nuevo_elemento** al final del **padre**.                                                          |
 | `elegido.insertAdjacentElement("afterend", nuevo_elemento);`                                      | Inserta el **nuevo_elemento** directamente después del **elegido**.                                         |
 
-Estas tablas presentan las sentencias de JavaScript y resumen su funcionalidad de forma clara. Si tienes alguna pregunta o necesitas más información, no dudes en preguntar.
