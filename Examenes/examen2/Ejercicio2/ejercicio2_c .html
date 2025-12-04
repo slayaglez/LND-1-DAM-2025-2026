@@ -1,0 +1,116 @@
+
+<html>
+
+    <head>
+
+        <title>Domótica</title>
+
+        <meta charset="utf-8">
+
+        <style>
+
+            body> div {
+
+                display:flex;
+
+                flex-direction:column;
+
+                justify-content:center;
+
+                align-items:center;
+
+                height:90vh;
+
+            }
+
+            div div {
+
+                margin:1em;
+
+            }
+
+            button {
+
+                width:100px;
+
+                height:50px;
+                
+
+
+            }
+            #padre2{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items:center;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        
+
+
+        <div>
+
+            <div id="padre">
+
+                <img id="imagen" src="./enunciados/bulboff.gif" >
+
+            </div>
+
+            <div id="padre2">
+
+                <button onclick="accionar()" id="boton" style="color:white; background-color:red">On</button>
+
+            </div>
+
+
+        </div>
+
+        <script>
+            
+            let encendida = false;
+            let mensaje = document.createElement("h3");
+            const boton=document.getElementById("boton");
+            boton.insertAdjacentElement("beforebegin", mensaje);
+
+            function accionar(){
+
+                if(encendida == false){
+                    document.getElementById("imagen").src="./enunciados/bulbon.gif";
+                    boton.style.backgroundColor="green";
+                    boton.style.color="white";
+                    boton.innerText="Off";
+                    encendida = true;
+                    console.log("encendemos");
+
+                    const fecha = new Date();
+                    mensaje.innerText="Bombilla encendida a las "+fecha.getHours()+":"+fecha.getMinutes()+":"+fecha.getSeconds();
+                    
+                    return;
+                }
+                
+                if(encendida == true){
+                    document.getElementById("imagen").src="./enunciados/bulboff.gif";
+                    boton.style.backgroundColor="red";
+                    boton.style.color="white";
+                    boton.innerText="On";
+                    encendida = false;
+                    console.log("apagamos");
+
+                    const fecha = new Date();
+                    mensaje.innerText="Bombilla apagada a las "+fecha.getHours()+":"+fecha.getMinutes()+":"+fecha.getSeconds();
+
+                    return;
+                }
+
+            }
+        </script>
+    </body>
+
+</html>
+
+

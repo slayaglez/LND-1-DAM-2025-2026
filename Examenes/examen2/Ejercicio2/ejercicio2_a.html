@@ -1,0 +1,102 @@
+
+<html>
+
+    <head>
+
+        <title>Domótica</title>
+
+        <meta charset="utf-8">
+
+        <style>
+
+            body> div {
+
+                display:flex;
+
+                flex-direction:column;
+
+                justify-content:center;
+
+                align-items:center;
+
+                height:90vh;
+
+            }
+
+            div div {
+
+                margin:1em;
+
+            }
+
+            button {
+
+                width:100px;
+
+                height:50px;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <script>
+            
+            function encender(){
+                const onButton=document.getElementById("onButton");
+                const offButton=document.getElementById("offButton");
+    
+
+                onButton.style.backgroundColor="green";
+                onButton.style.color="white";
+                offButton.style.backgroundColor="lightgrey";
+                offButton.style.color="black";
+
+                document.getElementById("imagen").src="./enunciados/bulbon.gif";
+
+            }
+
+            function apagar(){
+                const onButton=document.getElementById("onButton");
+                const offButton=document.getElementById("offButton");
+
+                onButton.style.backgroundColor="lightgrey";
+                onButton.style.color="black";
+                offButton.style.backgroundColor="red";
+                offButton.style.color="white";
+
+                document.getElementById("imagen").src="./enunciados/bulboff.gif";
+
+            }
+        </script>
+
+
+        <div>
+
+            <div id="padre">
+
+                <img id="imagen" src="./enunciados/bulboff.gif" >
+
+            </div>
+
+            <div>
+
+                <button onclick="encender()" id="onButton">On</button>
+
+            </div>
+
+            <div>
+
+                <button onclick="apagar()" id="offButton">Off</button>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
+
+

@@ -1,0 +1,101 @@
+
+<html>
+
+    <head>
+
+        <title>Domótica</title>
+
+        <meta charset="utf-8">
+
+        <style>
+
+            body> div {
+
+                display:flex;
+
+                flex-direction:column;
+
+                justify-content:center;
+
+                align-items:center;
+
+                height:90vh;
+
+            }
+
+            div div {
+
+                margin:1em;
+
+            }
+
+            button {
+
+                width:100px;
+
+                height:50px;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <script>
+            
+            let encendida = false;
+
+            function accionar(){
+
+                const button=document.getElementById("button");
+
+                if(encendida == false){
+                    document.getElementById("imagen").src="./enunciados/bulbon.gif";
+                    button.style.backgroundColor="green";
+                    button.style.color="white";
+                    button.innerText="Off";
+                    encendida = true;
+                    console.log("encendemos");
+                    return;
+                }
+                
+                if(encendida == true){
+                    document.getElementById("imagen").src="./enunciados/bulboff.gif";
+                    button.style.backgroundColor="red";
+                    button.style.color="white";
+                    button.innerText="On";
+                    encendida = false;
+                    console.log("apagamos");
+                    return;
+                }
+    
+
+                
+
+            }
+        </script>
+
+
+        <div>
+
+            <div id="padre">
+
+                <img id="imagen" src="./enunciados/bulboff.gif" >
+
+            </div>
+
+            <div>
+
+                <button onclick="accionar()" id="button" style="color:white; background-color:red">On</button>
+
+            </div>
+
+
+        </div>
+
+    </body>
+
+</html>
+
+
