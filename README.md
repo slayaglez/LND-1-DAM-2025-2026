@@ -9,6 +9,8 @@ Todas las actividades de la asignatura lenguaje de marcas estarán aquí listada
 ### JavaScript
 Una tabla con algunas sentencias realmente útiles en JavaScript con breves explicaciones sobre lo que hacen y cómo funcionan, ideal para el examen 2 del curso sobre JS.
 
+<br>
+<br>
 
 ## Actividades
 
