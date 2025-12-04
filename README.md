@@ -32,6 +32,9 @@ HTML y CSS, usamos propiedad `flex` y etiqueta `<grid>` con un diseño basado en
 ### Actividad 6
 Empezamos con JavaScript haciendo programas sencillos como calcular el **M.C.D**, mostrar y ocultar una contraseña o mostrar el **día de la semana** dada una fecha.
 
+<br>
+<br>
+
 ## Exámenes
 
 ### Examen 1 | 30 Oct 2025
