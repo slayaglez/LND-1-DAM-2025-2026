@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            border: 2px solid black;
+        }
+
+        button{
+            padding: 20px;
+        }
+
+        .container div{
+            border: 2px solid black;
+            padding: 40px;
+        }
+
+        .container>div:nth-of-type(2){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container>div:nth-of-type(3) {
+            display: flex;
+            background-color: lime;
+            grid-row-start: 2;
+            grid-column-start: span 2;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .container>div:nth-of-type(4) {
+            display: flex;
+            grid-row-start: 2;
+            grid-column-start: 3;
+            grid-column-end: 5;
+            justify-content: center;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .container>div:nth-of-type(5) {
+            display: flex;
+            grid-row-start: 3;
+            grid-column-start: 1;
+        }
+
+        .container>div:nth-of-type(6) {
+            display: flex;
+            background-color: lightyellow;
+            grid-row-start: 3;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .container>div:nth-of-type(7) {
+            grid-row-start: 3;
+            grid-column-start: 4;
+        }
+
+        .container>div:nth-of-type(8) {
+            display: flex;
+            grid-row-start: 1;
+            grid-column-start: 1;
+            padding: 20px;
+        }
+        .container>div:nth-of-type(9) {
+            display: flex;
+            grid-row-start: 1;
+            grid-column-start: 4;
+            padding: 20px;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--1-->
+        <div>
+            <p>Párrafo1</p>
+        </div>
+        <!--2-->
+        <div>
+            <a>Elemento a1</a>
+        </div>
+        <!--3-->
+        <div>
+            <button>A</button>
+            <button>B</button>
+            <button>C</button>
+            <button>D</button>
+        </div>
+        <!--4-->
+        <div>
+            <a>Elemento a1</a><a>Elemento a2</a>
+        </div>
+        <!--5-->
+        <div>
+            <p>Párrafo2</p>
+        </div>
+        <!--6-->
+        <div>
+            <button>A</button>
+            <button>B</button>
+            <button>C</button>
+            <button>D</button>
+        </div>
+        <!--7-->
+        <div>
+            <p>Párrafo3</p>
+        </div>
+        <!--8-->
+        <div>
+            <img src="http://lnd.angelmelchor.pro/tiny.jpg">
+        </div>
+        <!--9-->
+        <div>
+            <img src="http://lnd.angelmelchor.pro/tiny.jpg">
+        </div>
+    </div>
+</body>
+
+</html>
