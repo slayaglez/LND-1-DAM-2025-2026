@@ -1,6 +1,6 @@
 # Lenguaje de marcas 1º de DAM
 ## IES Puerto de la Cruz
-Todas las actividades de la asignatura lenguaje de marcas estarán aquí listadas
+Todas las actividades de la asignatura lenguaje de marcas estarán aquí listadas junto a los exámenes. Asignatura impartida por Ángel Domingo Melchor Páez.
 <br>
 <br>
 <br>
@@ -9,22 +9,25 @@ Todas las actividades de la asignatura lenguaje de marcas estarán aquí listada
 ### JavaScript
 Una tabla con algunas sentencias realmente útiles en JavaScript con breves explicaciones sobre lo que hacen y cómo funcionan, ideal para el examen 2 del curso sobre JS.
 
+### CSS
+Una tabla con las sentencias más básicas de CSS.
+
 <br>
 <br>
 
 ## Actividades
 
 ### Actividad 1
-HTML básico, los primeros encabezados, imágenes y divs
+HTML básico, los primeros encabezados, imágenes y divs.
 
 ### Actividad 2
-HTML básico, espaciado con `margin` y `padding`
+HTML básico, espaciado con `margin` y `padding`.
 
 ### Actividad 3
-HTML básico, tablas, y propiedades como `backgorund-color` y `font-family`
+HTML básico, tablas, y propiedades como `background-color` y `font-family`.
 
 ### Actividad 4
-HTML y CSS básico, **formularios** con la etiqueta `<form>` y método POST
+HTML y CSS básico, **formularios** con la etiqueta `<form>` y método POST.
 
 ### Actividad 5
 HTML y CSS, usamos propiedad `flex` y etiqueta `<grid>` con un diseño basado en filas y columnas.
