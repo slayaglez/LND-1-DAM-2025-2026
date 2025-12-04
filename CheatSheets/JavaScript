@@ -1,0 +1,47 @@
+# JavaScript - HTML Cheat Sheet
+
+## Selección del Elemento
+
+| Sentencia                                                         | Descripción                                                                                   |
+|------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| `elemento = document.getElementById("id_elemento");`           | Selecciona un elemento del DOM con el **id** especificado.                                   |
+| `listaElementos = document.getElementsByTagName("h1");`       | Obtiene todos los elementos del DOM que corresponden a la etiqueta **h1** en forma de lista. |
+| `listaElementos = document.getElementsByClassName("miClaseEspecial");` | Selecciona todos los elementos que tienen la clase "miClaseEspecial".                        |
+| `elemento = document.querySelector("#id_elemento > p:nth-of-type(2)");` | Selecciona el segundo **p** dentro del elemento con el **id** "id_elemento".                 |
+
+<hr>
+
+## Propiedades de los Elementos
+
+| Sentencia                                                                            | Descripción                                                                                     |
+|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| `elemento.href="http://lnd.angelmelchor.pro/editor.html";`                        | Cambia el atributo **href** de un elemento, generalmente un enlace, a una nueva URL.          |
+| `let atributo = elemento.id;`                                                      | Almacena el **id** del elemento en la variable **atributo**.                                   |
+| `elemento.innerHTML="<p style='color:red;'>Esto es un párrafo</p>";`              | Cambia el **contenido HTML** de un elemento, permitiendo agregar HTML dinámicamente.            |
+| `let contenido = elemento.innerHTML;`                                              | Almacena el contenido actual (HTML) del elemento en la variable **contenido**.                 |
+| `elemento.innerText="Este es solo el contenido";`                                 | Establece el **texto visible** del elemento, sin incluir el HTML.                             |
+| `contenido = elemento.innerText;`                                                 | Almacena el **texto plano** del elemento en la variable **contenido**.                         |
+| `elemento.style.color="red";`                                                    | Cambia el **color** del texto del elemento a rojo.                                            |
+| `elemento.style.backgroundColor="lightyellow";`                                   | Establece el **color de fondo** del elemento a amarillo claro.                                |
+| `elemento.style.fontSize="1.5em";`                                               | Ajusta el **tamaño de fuente** del texto del elemento a 1.5 veces el tamaño regular.          |
+| `elemento.style.fontWeight="bold";`                                              | Cambia el peso de la fuente a **negrita**.                                                    |
+| `elemento.style.textAlign="center";`                                             | Alinea el texto dentro del elemento al **centro**.                                           |
+| `elemento.style.justifyContent="space-evenly";`                                  | Establece la distribución del contenido en el **contenedor flex** a un espacio equitativo.    |
+
+<hr>
+
+## Creación de Elementos
+
+| Sentencia                                                                                             | Descripción                                                                                                   |
+|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| `nuevo_elemento = document.createElement("h3");`                                                  | Crea un nuevo elemento de tipo **h3**.                                                                        |
+| `padre = document.querySelector("#div_padre");`                                                  | Selecciona el elemento padre donde se realizarán operaciones.                                                 |
+| `elegido = document.querySelector("#div_padre > img:last-of-type");`                              | Selecciona la última imagen dentro del **div** padre.                                                         |
+| `padre.removeChild(elegido);`                                                                      | Elimina el elemento **elegido** (la imagen) del DOM.                                                         |
+| `padre.replaceChild(nuevo_elemento, elegido);`                                                    | Reemplaza el **elegido** (la imagen) con el **nuevo_elemento** (h3).                                        |
+| `elegido.insertAdjacentElement("beforebegin", nuevo_elemento);`                                   | Inserta el **nuevo_elemento** justo antes del **elegido**.                                                  |
+| `padre.insertAdjacentElement("afterbegin", nuevo_elemento);`                                      | Agrega el **nuevo_elemento** al inicio del **padre**.                                                        |
+| `padre.insertAdjacentElement("beforeend", nuevo_elemento);`                                       | Añade el **nuevo_elemento** al final del **padre**.                                                          |
+| `elegido.insertAdjacentElement("afterend", nuevo_elemento);`                                      | Inserta el **nuevo_elemento** directamente después del **elegido**.                                         |
+
+Estas tablas presentan las sentencias de JavaScript y resumen su funcionalidad de forma clara. Si tienes alguna pregunta o necesitas más información, no dudes en preguntar.
