@@ -42,4 +42,7 @@ Empezamos con JavaScript haciendo programas sencillos como calcular el **M.C.D**
 ## Exámenes
 
 ### Examen 1 | 30 Oct 2025
-9.2/10 (por corregir)
+corregido
+
+### Examen 2 | 4 Dic 2025
+corregido
