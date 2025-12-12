@@ -36,6 +36,9 @@ HTML y CSS, usamos propiedad `flex` y etiqueta `<grid>` con un diseño basado en
 ### Actividad 6
 Empezamos con JavaScript haciendo programas sencillos como calcular el **M.C.D**, mostrar y ocultar una contraseña o mostrar el **día de la semana** dada una fecha.
 
+### Actividad 7 
+Un pequeño ejercicio de JavaScript donde al pulsar un botón se genera un número aleatorio.
+
 <br>
 <br>
 
