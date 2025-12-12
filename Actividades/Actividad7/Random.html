@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Random</title>
+        <meta charset="UTF-8">
+        <style>
+
+            #padre{
+                display: flex;
+                flex-direction: column;
+                gap: 4vh;
+            }
+            #boton{
+                padding: 5vw;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 4vw;
+                border-radius: 15%;
+                
+            }
+            #botondiv{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 25vh;
+                
+            }
+            #resultado{
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 25vh;
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <script>
+            function random() {
+                let randnum = Math.ceil(Math.random()*100000);
+                let resultado = document.getElementById("numero");
+                resultado.innerText = randnum;
+            }
+        </script>
+
+
+
+        <div id="padre">
+            <div id="botondiv">
+                <button id="boton" onclick="random()">Random</button>
+            </div>
+            <div id="resultado">
+                <h1 id="numero"></h1>
+            </div>
+        </div>
+    </body>
+
+</html>
