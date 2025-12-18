@@ -1,158 +1,179 @@
+<!--
+@author slayaglez
+@version 1.0.0
+@date 18 Dec 2025
+@brief Pagina que simula un dado de 6 caras
+-->
+
 <html>
-    <head>
-        <title>Random</title>
-        <meta charset="UTF-8">
-        <style>
 
-            #padre{
-                display: flex;
-                flex-direction: column;
-                gap: 4vh;
-            }
-            #boton{
-                padding: 2vw;
-                font-family: 'Courier New', Courier, monospace;
-                font-size: 3vw;
-                border-radius: 4vw;
-                
-            }
-            #botondiv{
-                margin-left: auto;
-                margin-right: auto;
-                
-            }
-            #resultado{
-                display: grid;
-                grid-template-columns: auto auto auto;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 5vh;
-                margin-top: 5vh;
-                border: solid black 6px;
-                padding: 1vw;
-            }
-            #n1{
-               grid-column-start: 1;
-               grid-row-start: 1; 
-               visibility: hidden;
-            }
-            #n2{
-               grid-column-start: 3;
-               grid-row-start: 1; 
-               visibility: hidden;
-            }
-            #n3{
-               grid-column-start: 1;
-               grid-row-start: 2; 
-               visibility: hidden;
-            }
-            #n4{
-               grid-column-start: 2;
-               grid-row-start: 2; 
-               visibility: hidden;
-            }
-            #n5{
-               grid-column-start: 3;
-               grid-row-start: 2; 
-               visibility: hidden;
-            }
-            #n6{
-               grid-column-start: 1;
-               grid-row-start: 3; 
-               visibility: hidden;
-            }
-            #n7{
-               grid-column-start: 3;
-               grid-row-start: 3; 
-               visibility: hidden;
-            }
+<head>
+    <title>Random</title>
+    <meta charset="UTF-8">
+    <style>
+        #padre {
+            display: flex;
+            flex-direction: column;
+            gap: 4vh;
+        }
 
-        </style>
-    </head>
-    <body>
-        <script>
-            function random() {
-                const randnum = Math.ceil(Math.random()*6);
+        #boton {
+            padding: 2vw;
+            font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+            font-size: 3vw;
+            font-weight: bold;
+            border-radius: 4vw;
 
-                let element1 = document.getElementById("n1");
-                let element2 = document.getElementById("n2");
-                let element3 = document.getElementById("n3");
-                let element4 = document.getElementById("n4");
-                let element5 = document.getElementById("n5");
-                let element6 = document.getElementById("n6");
-                let element7 = document.getElementById("n7");
+        }
 
-                element1.style.visibility = 'hidden';
-                element2.style.visibility = 'hidden';
-                element3.style.visibility = 'hidden';
-                element4.style.visibility = 'hidden';
-                element5.style.visibility = 'hidden';
-                element6.style.visibility = 'hidden';
-                element7.style.visibility = 'hidden';
-            
-                
-                switch(randnum){
-                    case 1: 
-                        element4.style.visibility = 'visible';
-                        
-                        break;
-                    case 2: 
-                        element1.style.visibility = 'visible';
-                        element7.style.visibility = 'visible';
-                        
-                        break;
-                    case 3:
-                        element1.style.visibility = 'visible';
-                        element4.style.visibility = 'visible';
-                        element7.style.visibility = 'visible';
-                        
-                        break;
-                    case 4:
-                        element1.style.visibility = 'visible';
-                        element2.style.visibility = 'visible';
-                        element6.style.visibility = 'visible';
-                        element7.style.visibility = 'visible';
-                        
-                        break;
-                    case 5:
-                        element1.style.visibility = 'visible';
-                        element2.style.visibility = 'visible';
-                        element4.style.visibility = 'visible';
-                        element6.style.visibility = 'visible';
-                        element7.style.visibility = 'visible';
-                        
-                        break;
-                    case 6:
-                        element1.style.visibility = 'visible';
-                        element2.style.visibility = 'visible';
-                        element3.style.visibility = 'visible';
-                        element5.style.visibility = 'visible';
-                        element6.style.visibility = 'visible';
-                        element7.style.visibility = 'visible';
-                        
-                        break;
-                }
-                
-            }
-        </script>
+        #botondiv {
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #resultado {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5vh;
+            margin-top: 5vh;
+            border: solid black 10px;
+            border-radius: 4vw;
+            padding: 1vw;
+        }
+
+        #n1 {
+            grid-column-start: 1;
+            grid-row-start: 1;
+            visibility: hidden;
+        }
+
+        #n2 {
+            grid-column-start: 3;
+            grid-row-start: 1;
+            visibility: hidden;
+        }
+
+        #n3 {
+            grid-column-start: 1;
+            grid-row-start: 2;
+            visibility: hidden;
+        }
+
+        #n4 {
+            grid-column-start: 2;
+            grid-row-start: 2;
+            visibility: visible;
+        }
+
+        #n5 {
+            grid-column-start: 3;
+            grid-row-start: 2;
+            visibility: hidden;
+        }
+
+        #n6 {
+            grid-column-start: 1;
+            grid-row-start: 3;
+            visibility: hidden;
+        }
+
+        #n7 {
+            grid-column-start: 3;
+            grid-row-start: 3;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
 
 
 
-        <div id="padre">
-            
-            <div id="resultado">
-                <img id="n1" src="./img/circle.svg">
-                <img id="n2" src="./img/circle.svg">
-                <img id="n3" src="./img/circle.svg">
-                <img id="n4" src="./img/circle.svg">
-                <img id="n5" src="./img/circle.svg">
-                <img id="n6" src="./img/circle.svg">
-                <img id="n7" src="./img/circle.svg">
-            </div>
-            <div id="botondiv">
-                <button id="boton" onclick="random()">Tirar dado</button>
-            </div>
+        function random() {
+            const randnum = Math.ceil(Math.random() * 6);
+
+            let element1 = document.getElementById("n1");
+            let element2 = document.getElementById("n2");
+            let element3 = document.getElementById("n3");
+            let element4 = document.getElementById("n4");
+            let element5 = document.getElementById("n5");
+            let element6 = document.getElementById("n6");
+            let element7 = document.getElementById("n7");
+
+            element1.style.visibility = 'hidden';
+            element2.style.visibility = 'hidden';
+            element3.style.visibility = 'hidden';
+            element4.style.visibility = 'hidden';
+            element5.style.visibility = 'hidden';
+            element6.style.visibility = 'hidden';
+            element7.style.visibility = 'hidden';
+
+            switch (randnum) {
+                case 1:
+                    element4.style.visibility = 'visible';
+
+                    break;
+                case 2:
+                    element1.style.visibility = 'visible';
+                    element7.style.visibility = 'visible';
+
+                    break;
+                case 3:
+                    element1.style.visibility = 'visible';
+                    element4.style.visibility = 'visible';
+                    element7.style.visibility = 'visible';
+
+                    break;
+                case 4:
+                    element1.style.visibility = 'visible';
+                    element2.style.visibility = 'visible';
+                    element6.style.visibility = 'visible';
+                    element7.style.visibility = 'visible';
+
+                    break;
+                case 5:
+                    element1.style.visibility = 'visible';
+                    element2.style.visibility = 'visible';
+                    element4.style.visibility = 'visible';
+                    element6.style.visibility = 'visible';
+                    element7.style.visibility = 'visible';
+
+                    break;
+                case 6:
+                    element1.style.visibility = 'visible';
+                    element2.style.visibility = 'visible';
+                    element3.style.visibility = 'visible';
+                    element5.style.visibility = 'visible';
+                    element6.style.visibility = 'visible';
+                    element7.style.visibility = 'visible';
+
+                    break;
+            }
+
+        }
+    </script>
+
+
+
+    <div id="padre">
+
+        <div id="resultado">
+            <img id="n1" src="./img/circle.svg">
+            <img id="n2" src="./img/circle.svg">
+            <img id="n3" src="./img/circle.svg">
+            <img id="n4" src="./img/circle.svg">
+            <img id="n5" src="./img/circle.svg">
+            <img id="n6" src="./img/circle.svg">
+            <img id="n7" src="./img/circle.svg">
         </div>
-    </body>
+        <div id="botondiv">
+            <button id="boton" onclick="random()">Tirar dado</button>
+        </div>
+    </div>
+</body>
 
 </html>
