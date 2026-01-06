@@ -35,4 +35,4 @@ Empezamos con JavaScript haciendo programas sencillos. Ejemplos de esto son calc
 ### Actividad 7
 Hacemos un programa en JavaScript que genere un número del 1 al 6 y dado el caso, con CSS creamos la cara de un dado con el número de puntos correspondientes usando solo una imagen de un punto negro en .svg.
 <br>
-<img src="img/Ej7.png">
+<img src="img/Ej7.png" style="width:50%">
