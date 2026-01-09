@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>login</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: lightyellow;
+            padding-top: 25vh;
+            padding-bottom: 25vh;
+        }
+
+        #title {
+            display: flex;
+            padding: 4px;
+        }
+
+        img {
+            height: auto;
+        }
+
+        #name,
+        #pssw {
+            border: transparent;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        #login {
+            font-size: 1em;
+            background-color: pink;
+            border: red solid 2px;
+            border-radius: 15px;
+            width: 100px;
+            padding: 10px;
+            font-weight: bold;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        #father {
+            background-color: white;
+            border: 2px solid black;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="father">
+        <div id="title">
+            <img src="tiny.jpg" alt="">
+            <h1>LOGÍSTICA,S.L.</h1>
+        </div>
+        <div id="formulario">
+            <form action="http://lnd.angelmelchor.pro/login.php" method="GET">
+                <div>
+                    <label for="name">Nombre: </label>
+                    <input id="name" type="text" placeholder="Introduce tu nombre">
+                </div>
+                <div>
+                    <label for="pssw">Constraseña: </label>
+                    <input id="pssw" type="password" placeholder="Introduce tu contraseña">
+                </div>
+
+                <input id="login" type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -11,8 +11,9 @@
     <title>Random</title>
     <meta charset="UTF-8">
     <style>
-        body{
-            background-color: black;;
+        body {
+            background-color: black;
+            ;
         }
 
         #padre {
@@ -30,10 +31,11 @@
             font-size: 3vw;
             font-weight: bold;
             border-radius: 4vw;
-            margin-bottom: 1vh;;
+            margin-bottom: 1vh;
             border: rgb(61, 0, 0) 8px solid;
             background: #570303;
             background: radial-gradient(circle, rgba(87, 3, 3, 1) 0%, rgba(140, 0, 0, 1) 100%);
+            transition: transform 0.3s ease;
         }
 
         #boton:hover {
@@ -43,10 +45,15 @@
             font-size: 3vw;
             font-weight: bold;
             border-radius: 4vw;
-            margin-bottom: 1vh;;
+            margin-bottom: 1vh;
             border: rgb(61, 0, 0) 8px solid;
             background: #360202;
             background: radial-gradient(circle, rgb(58, 2, 2) 0%, rgb(97, 0, 0) 100%);
+            transform: scale(1.1);
+        }
+
+        #boton:active {
+            transform: scale(0.9);
         }
 
         #botondiv {
@@ -66,7 +73,7 @@
             border-radius: 4vw;
             padding: 1vw;
             background-color: #ffffff;
-            background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(196, 196, 196, 1) 100%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(196, 196, 196, 1) 100%);
         }
 
         #n1 {
@@ -120,6 +127,7 @@
 
         function random() {
             const randnum = Math.ceil(Math.random() * 6);
+            const randnum2 = Math.ceil(Math.random() * 2);
 
             let element1 = document.getElementById("n1");
             let element2 = document.getElementById("n2");
@@ -140,19 +148,30 @@
             switch (randnum) {
                 case 1:
                     element4.style.visibility = 'visible';
-
                     break;
+
                 case 2:
-                    element1.style.visibility = 'visible';
-                    element7.style.visibility = 'visible';
-
+                    if (randnum2 == 1) {
+                        element1.style.visibility = 'visible';
+                        element7.style.visibility = 'visible';
+                    } else {
+                        element2.style.visibility = 'visible';
+                        element6.style.visibility = 'visible';
+                    }
                     break;
+
                 case 3:
-                    element1.style.visibility = 'visible';
-                    element4.style.visibility = 'visible';
-                    element7.style.visibility = 'visible';
-
+                    if (randnum2 == 1) {
+                        element1.style.visibility = 'visible';
+                        element4.style.visibility = 'visible';
+                        element7.style.visibility = 'visible';
+                    } else {
+                        element2.style.visibility = 'visible';
+                        element4.style.visibility = 'visible';
+                        element6.style.visibility = 'visible';
+                    }
                     break;
+
                 case 4:
                     element1.style.visibility = 'visible';
                     element2.style.visibility = 'visible';
