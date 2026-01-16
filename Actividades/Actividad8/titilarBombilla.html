@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Control Físico de Bombilla</title>
+    <meta charset="UTF-8">
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url(fonts/Roboto/Roboto/static/Roboto-Regular.ttf);
+        }
+
+        body {
+            background-color: azure;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 5%;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Bombilla Visual */
+        #bombilla-visual {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #333;
+            margin-bottom: 20px;
+            border: 3px solid #555;
+            transition: all 0.2s;
+        }
+
+        .luz-on {
+            background-color: #ffdf00 !important;
+            box-shadow: 0 0 30px #ffdf00;
+            border-color: #f1c40f !important;
+        }
+
+        #formulario {
+            padding: 1.5em;
+            background-color: white;
+            width: 260px;
+            border: 2px solid black;
+            border-radius: 8px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .botonenviar,
+        .botonTitilar {
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid black;
+            padding: 12px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .botonenviar {
+            background-color: rgb(228, 194, 41);
+        }
+
+        .botonTitilar {
+            background-color: #e0e0e0;
+        }
+
+        .activo {
+            background-color: #ff4444;
+            color: white;
+        }
+
+        .entrada {
+            margin-bottom: 12px;
+        }
+
+        input[type="radio"] {
+            transform: scale(1.2);
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="bombilla-visual"></div>
+
+    <div id="formulario">
+        <!-- Eliminamos 'action' para manejarlo todo por JS y evitar recargas -->
+        <form id="miFormulario">
+            <div class="entrada">
+                <input type="radio" id="encender" name="on" value="true">
+                <label for="encender">Encender</label>
+            </div>
+            <div class="entrada">
+                <input type="radio" id="apagar" name="on" value="false" checked>
+                <label for="apagar">Apagar</label>
+            </div>
+            <input type="submit" value="Enviar Comando" class="botonenviar">
+        </form>
+
+        <button type="button" id="btnTitilar" class="botonTitilar">TITILAR</button>
+    </div>
+
+    <script>
+        const API_URL = "http://10.104.99.89:8080/rpc/Switch.Set";
+        const bombilla = document.getElementById('bombilla-visual');
+        const btnTitilar = document.getElementById('btnTitilar');
+        let intervaloTitilo = null;
+
+        // Función para enviar el comando real a la bombilla física
+        async function enviarComandoReal(estado) {
+            const url = `${API_URL}?id=0&on=${estado}`;
+            try {
+                // 'no-cors' evita bloqueos de seguridad básicos en redes locales
+                await fetch(url, { mode: 'no-cors' });
+                actualizarInterfazVisual(estado);
+            } catch (e) {
+                console.error("Error enviando comando a la bombilla física:", e);
+            }
+        }
+
+        function actualizarInterfazVisual(estado) {
+            if (estado === "true" || estado === true) {
+                bombilla.classList.add('luz-on');
+            } else {
+                bombilla.classList.remove('luz-on');
+            }
+        }
+
+        // Manejar el formulario (Encendido/Apagado manual)
+        document.getElementById('miFormulario').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const valor = document.querySelector('input[name="on"]:checked').value;
+            enviarComandoReal(valor);
+        });
+
+        // Lógica de Titileo Real
+        btnTitilar.addEventListener('click', () => {
+            if (intervaloTitilo) {
+                // Detener titileo
+                clearInterval(intervaloTitilo);
+                intervaloTitilo = null;
+                btnTitilar.innerText = "TITILAR (Real y Visual)";
+                btnTitilar.classList.remove('activo');
+                enviarComandoReal("false"); // Asegurar que queda apagada
+            } else {
+                // Iniciar titileo
+                btnTitilar.innerText = "DETENER TITILEO";
+                btnTitilar.classList.add('activo');
+                let encendidoActual = false;
+
+                intervaloTitilo = setInterval(() => {
+                    encendidoActual = !encendidoActual;
+                    enviarComandoReal(encendidoActual.toString());
+                }, 500); // 800ms para no saturar la red local/dispositivo
+            }
+        });
+    </script>
+</body>
+
+</html>
