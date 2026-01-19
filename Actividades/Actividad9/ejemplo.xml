@@ -1,0 +1,13 @@
+<videojuego>
+    <personaje>
+        <nombre>
+            Player1
+        </nombre>
+        <email>
+            sebastianlaya01@gmail.com
+        </email>
+        <nivel>
+            22
+        </nivel>
+    </personaje>
+</videojuego>
