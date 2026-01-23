@@ -1,0 +1,55 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--Tipos simples-->
+	<xsd:simpleType name="titulo">
+	    <xsd:restriction base="xsd:string">
+	    </xsd:restriction>
+	</xsd:simpleType>
+
+    <xsd:simpleType name="autor">
+	    <xsd:restriction base="xsd:string">
+	    </xsd:restriction>
+	</xsd:simpleType>
+
+    <xsd:simpleType name="isbn">
+	    <xsd:restriction base="xsd:integer">
+	    </xsd:restriction>
+	</xsd:simpleType>
+
+    <xsd:simpleType name="valor">
+	    <xsd:restriction base="xsd:decimal">
+	    </xsd:restriction>
+	</xsd:simpleType>
+
+    <xsd:simpleType name="moneda">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="EUR DOLAR LIBRA"/>
+	</xsd:restriction>
+	</xsd:simpleType>
+
+	<!--Tipos complejos-->
+	<xsd:complexType name="tipoBiblioteca">
+		<xsd:sequence>
+			<xsd:element name="libro" type="tipoLibro" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tipoLibro">
+		<xsd:sequence>
+			<xsd:element name="titulo" type="xsd:string"/>
+			<xsd:element name="autor" type="xsd:string" maxOccurs="unbounded"/>
+			<xsd:element name="isbn" type="xsd:string"/>
+            <xsd:element name="precio" type="tipoPrecio"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:complexType name="tipoPrecio">
+		<xsd:sequence>
+			<xsd:element name="valor" type="xsd:decimal"/>
+            <xsd:element name="moneda" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!--Elemento raíz-->
+	<xsd:element name="biblioteca" type="tipoBiblioteca"/>
+	
+</xsd:schema>

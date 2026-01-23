@@ -1,0 +1,20 @@
+<biblioteca>
+    <libro>
+        <titulo>La sombra del viento</titulo>
+        <autor>Carlos Ruiz Zafón</autor>
+        <isbn>124359</isbn>
+        <precio>
+            <valor> 17.5</valor>
+            <moneda>EUR</moneda>
+        </precio>
+    </libro>
+    <libro>
+        <titulo>La sombra del sol</titulo>
+        <autor>Carlos Ruiz Zafón</autor>
+        <isbn>124358</isbn>
+        <precio>
+            <valor> 19.5</valor>
+            <moneda>DOLAR</moneda>
+        </precio>
+    </libro>
+</biblioteca>
