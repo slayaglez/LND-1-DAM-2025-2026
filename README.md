@@ -63,7 +63,7 @@ Un pequeño ejercicio de JavaScript donde al pulsar un botón se genera un núme
 Con solo HTML hacemos un formulario que acciona una bombilla a través de su IP
 
 ### Actividad 9
-Introducción a XML
+Introducción a XML y XSD, para validar los archivos se recomienda el uso de la siguiente [página](http://lnd.angelmelchor.pro/xsl/)
 
 <br>
 <br>
