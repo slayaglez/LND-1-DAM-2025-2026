@@ -1,0 +1,18 @@
+<agenda>
+    <contacto>
+        <nombre>Luis</nombre>
+        <apellido1>García</apellido1>
+        <apellido2>García</apellido2>
+        <direccion>Calle 4 Puerta 18</direccion>
+        <telefono>677888999</telefono>
+        <fechanacimiento>10/01/2001</fechanacimiento>
+        <email>luisgarcia@gmail.com</email>
+        <provincia>Granada</provincia>
+        <datos>
+            <contacto>
+                <telefono>699888777</telefono>
+                <nombre>Javier</nombre>
+            </contacto>
+        </datos>
+    </contacto>
+</agenda>
