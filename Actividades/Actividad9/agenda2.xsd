@@ -1,5 +1,33 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
+<!-- Elementos simples-->
+<xsd:simpleType name="tipoMarcaCoche">
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="Cupra"/>
+        <xsd:enumeration value="Seat"/>
+        <xsd:enumeration value="Ford"/>
+        <xsd:enumeration value="Skoda"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoCorreo">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="[a-z]+((\.[a-z]+)*[a-z0-9_-]*)*@[a-z]+\.([a-z]+[a-z0-9]\.)?[a-z]{2,}"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoNombre">
+	<xsd:restriction base="xsd:string">
+	<xsd:pattern value="([A-ZÁÉÍÓÚ][a-záéíóú]+)(\\s[A-ZÁÉÍÓÚ][a-záéíóú]+)?"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoTelefono">
+	<xsd:restriction base="xsd:integer">
+		<xsd:pattern value="(+[0-9]{1,3})?[6-9][0-9]{8}"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
 <!-- Elementos complejos-->
 <!-- Contacto Datos-->
 <xsd:complexType name="tipoContactoDatos">
