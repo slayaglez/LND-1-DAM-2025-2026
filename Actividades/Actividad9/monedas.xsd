@@ -1,0 +1,16 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Elemento complejo con contenido decimal y atributo -->
+  <xsd:complexType name="tipoPrecio">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:decimal">
+        <!-- El tipo debe ser string (o un enumerado), no 'tipoPrecio' -->
+        <xsd:attribute name="moneda" type="xsd:string" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+
+  <xsd:element name="precio" type="tipoPrecio"/>
+
+</xsd:schema>

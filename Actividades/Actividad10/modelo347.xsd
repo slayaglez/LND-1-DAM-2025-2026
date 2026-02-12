@@ -1,0 +1,157 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!--Tipos Simples-->
+    <xsd:simpleType name="tipoVia">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="calle"/>
+            <xsd:enumeration value="avenida"/>
+            <xsd:enumeration value="paseo"/>
+            <xsd:enumeration value="otro"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="tipoDocumento">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="cif"/>
+            <xsd:enumeration value="nif"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="tipoConfirmado">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="true"/>
+            <xsd:enumeration value="false"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="tipoSociedad">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="sociedad limitada"/>
+            <xsd:enumeration value="sociedad anónima"/>
+            <xsd:enumeration value="comunidad de bienes"/>
+            <xsd:enumeration value="autónomo"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="tipoUso">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="particular"/>
+            <xsd:enumeration value="empresarial"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+    <!--Tipos Complejos-->
+    <xsd:complexType name="tipoTotal">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:decimal">
+        <xsd:attribute name="moneda" type="xsd:string" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoDatos">
+        <xsd:sequence>
+            <xsd:element name="trimestre1T" type="tipoTotal" maxOccurs="unbounded"/>
+            <xsd:element name="trimestre2T" type="tipoTotal" maxOccurs="unbounded"/>
+            <xsd:element name="trimestre3T" type="tipoTotal" maxOccurs="unbounded"/>
+            <xsd:element name="trimestre4T" type="tipoTotal" maxOccurs="unbounded"/>
+            <xsd:element name="total" type="tipoTotal"/>
+        </xsd:sequence>
+        <xsd:attribute name="confirmado" type="tipoConfirmado" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoTelefono">
+        <xsd:sequence>
+            <xsd:element name="particular" type="xsd:int" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="empresarial" type="xsd:int" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoEmail">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="uso" type="tipoUso" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoContacto">
+        <xsd:sequence>
+            <xsd:element name="email" type="tipoEmail" minOccurs="0" maxOccurs="6"/>
+            <xsd:element name="telefonos" type="tipoTelefono"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoNumero">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="portal" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoMunicio">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="CP" type="xsd:int" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoDireccion">
+        <xsd:sequence>
+            <xsd:element name="via" type="tipoVia"/>
+            <xsd:element name="nombreVia" type="xsd:string"/>
+            <xsd:element name="numero" type="tipoNumero"/>
+            <xsd:element name="municio" type="tipoMunicio"/>
+            <xsd:element name="provincia" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoIdentificacion">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="documento" type="tipoDocumento" use="required"/>
+        <xsd:attribute name="id" type="xsd:string" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+    <xsd:complexType name="tipoFiscal">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="tipo" type="tipoSociedad"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+    <xsd:complexType name="tipoCliente">
+        <xsd:sequence>
+            <xsd:element name="nombreFiscal" type="tipoFiscal"/>
+            <xsd:element name="identificacion" type="tipoIdentificacion" maxOccurs="1"/>
+            <xsd:element name="direccion" type="tipoDireccion" maxOccurs="3"/>
+            <xsd:element name="contacto" type="tipoContacto"/>
+            <xsd:element name="datosContables" type="tipoDatos"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoProveedor">
+        <xsd:sequence>
+            <xsd:element name="nombreFiscal" type="tipoFiscal"/>
+            <xsd:element name="identificacion" type="tipoIdentificacion" maxOccurs="1"/>
+            <xsd:element name="direccion" type="tipoDireccion" maxOccurs="3"/>
+            <xsd:element name="contacto" type="tipoContacto"/>
+            <xsd:element name="datosContables" type="tipoDatos"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoModelo">
+        <xsd:sequence>
+            <xsd:element name="proveedor" type="tipoProveedor" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="cliente" type="tipoCliente" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="modelo347" type="tipoModelo"/>
+</xsd:schema>

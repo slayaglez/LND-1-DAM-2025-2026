@@ -1,0 +1,87 @@
+<modelo347>
+    <proveedor>
+        <nombreFiscal tipo="sociedad limitada">Frutas y Verduras Buenas,s.l.</nombreFiscal>
+        <identificacion documento="cif" id="B76121213"/>
+        <direccion>
+            <via>calle</via>
+            <nombreVia>Bienvendio</nombreVia>
+            <numero>12</numero>
+            <municio CP="38430">Icod de los Vinos</municio>
+            <provincia>S/C de Tenerife</provincia>
+        </direccion>
+        <direccion>
+            <via>paseo</via>
+            <nombreVia>de Campo</nombreVia>
+            <numero>122</numero>
+            <municio CP="38300">La Guancha</municio>
+            <provincia>S/C de Tenerife</provincia>
+        </direccion>
+        <contacto>
+            <email uso="particular">particular@gmail.com</email>
+            <email uso="empresarial">frutasyverduras@gmail.com</email>
+            <telefonos>
+                <particular>922923923</particular>
+                <empresarial>822823823</empresarial>
+                <empresarial>678671672</empresarial>
+            </telefonos>
+        </contacto>
+        <datosContables confirmado="false">
+            <trimestre1T moneda="EUR">1323.45</trimestre1T>
+            <trimestre2T moneda="EUR">2341.12</trimestre2T>
+            <trimestre3T moneda="EUR">0</trimestre3T>
+            <trimestre4T moneda="EUR">400.00</trimestre4T>
+            <total moneda="EUR">4094.57</total>
+        </datosContables>
+    </proveedor>
+    <proveedor>
+        <nombreFiscal tipo="sociedad anónima">Suministros Alimentarios del Norte, S.A.</nombreFiscal>
+        <identificacion documento="cif" id="A45897231"/>
+        <direccion>
+            <via>avenida</via>
+            <nombreVia>Los Mercados</nombreVia>
+            <numero portal="B">45</numero>
+            <municio CP="48012">Bilbao</municio>
+            <provincia>Vizcaya</provincia>
+        </direccion>
+        <contacto>
+            <email uso="empresarial">administracion@suminorte.es</email>
+            <telefonos>
+                <empresarial>944654321</empresarial>
+                <empresarial>600123987</empresarial>
+            </telefonos>
+        </contacto>
+        <datosContables confirmado="true">
+            <trimestre1T moneda="EUR">2100.50</trimestre1T>
+            <trimestre2T moneda="EUR">1890.75</trimestre2T>
+            <trimestre3T moneda="EUR">950.00</trimestre3T>
+            <trimestre4T moneda="EUR">1230.20</trimestre4T>
+            <total moneda="EUR">6171.45</total>
+        </datosContables>
+    </proveedor>
+    <cliente>
+        <nombreFiscal tipo="sociedad anónima">Tecnología y Servicios Globales, S.A.</nombreFiscal>
+        <identificacion documento="cif" id="A90234567"/>
+        <direccion>
+            <via>paseo</via>
+            <nombreVia>Innovación</nombreVia>
+            <numero portal="A">101</numero>
+            <municio CP="28022">Madrid</municio>
+            <provincia>Madrid</provincia>
+        </direccion>
+        <contacto>
+            <email uso="particular">usuario.contacto@gmail.com</email>
+            <email uso="empresarial">facturacion@tys-global.es</email>
+            <telefonos>
+                <particular>915123456</particular>
+                <empresarial>914987654</empresarial>
+            </telefonos>
+        </contacto>
+        <datosContables confirmado="false">
+            <trimestre1T moneda="BTC">0.125</trimestre1T>
+            <trimestre2T moneda="BTC">0.210</trimestre2T>
+            <trimestre3T moneda="BTC">0.050</trimestre3T>
+            <trimestre4T moneda="BTC">0.300</trimestre4T>
+            <total moneda="BTC">0.685</total>
+        </datosContables>
+    </cliente>
+</modelo347>
