@@ -1,0 +1,219 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--Tipos Simples-->
+<xsd:simpleType name="tipoEmpresa">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="true"/>
+        <xsd:enumeration value="false"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoPortal">
+    <xsd:restriction base="xsd:string">
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoElemento">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[^\s]+"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoPrecio">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[0-9]+\.[0-9]{2}€"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoTipoIntervencion">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="reparación"/>
+        <xsd:enumeration value="mantenimiento"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoEmail">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[a-z]+@[a-z]+\.[a-z]{2,}"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoTipo">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="fijo"/>
+        <xsd:enumeration value="móvil"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoCP">
+    <xsd:restriction base="xsd:integer">
+        <xsd:pattern value="[0-9]{5}"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoNombre">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+\s){1,2}[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoPais">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[A-Z]{2}"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoKm">
+    <xsd:restriction base="xsd:integer">
+        <xsd:pattern value="([0-9]{1,6})|(1000000)"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoYear">
+    <xsd:restriction base="xsd:integer">
+        <xsd:pattern value="[0-9]{4}"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="tipoFecha">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[0-9]{2}\-[0-9]{2}\-[0-9]{4}"/>
+    </xsd:restriction>
+</xsd:simpleType>
+
+
+<!--Tipos Complejos-->
+<xsd:complexType name="tipoKilometraje">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="km" type="tipoKm"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="tipoDescripcion">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="precio" type="tipoPrecio"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="tipoOtro">
+    <xsd:sequence>
+        <xsd:element name="descripción" type="tipoDescripcion" maxOccurs="unbounded"/>
+    </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="tipoCambio">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="elemento" type="tipoElemento"/>
+        <xsd:attribute name="precio" type="tipoPrecio"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="tipoIntervenciones">
+    <xsd:sequence>
+        <xsd:element name="cambio" type="tipoCambio" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element name="otro" type="tipoOtro" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="tipo" type="tipoTipoIntervencion"/>
+</xsd:complexType>
+
+<xsd:complexType name="tipoTelefono">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="tipo" type="tipoTipo"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="tipoContacto">
+    <xsd:sequence>
+        <xsd:element name="telefono" type="tipoTelefono" maxOccurs="4"/>
+        <xsd:element name="email" type="tipoEmail"/>
+    </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="tipoMunicipio">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="CP" type="tipoCP"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="tipoNumero">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="portal" type="tipoPortal"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="tipoDireccion">
+    <xsd:sequence>
+        <xsd:element name="nombreVia" type="xsd:string"/>
+        <xsd:element name="numero" type="tipoNumero"/>
+        <xsd:element name="municipio" type="tipoMunicipio"/>
+        <xsd:element name="provincia" type="xsd:string"/>
+    </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="tipoPropietario">
+    <xsd:sequence>
+        <xsd:element name="nombre" type="tipoNombre"/>
+        <xsd:element name="direccion" type="tipoDireccion"/>
+        <xsd:element name="contacto" type="tipoContacto"/>
+    </xsd:sequence>
+    <xsd:attribute name="empresa" type="tipoEmpresa"/>
+</xsd:complexType>
+
+<xsd:complexType name="tipoMatricula">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="pais" type="tipoPais" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="tipoMarca">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="modelo" type="xsd:string" use="required"/>
+        <xsd:attribute name="year" type="tipoYear"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="tipoEntrada">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="fecha" type="tipoFecha"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="tipoVehiculo">
+    <xsd:sequence>
+        <xsd:element name="entrada" type="tipoEntrada"/>
+        <xsd:element name="marca" type="tipoMarca"/>
+        <xsd:element name="kilometraje" type="tipoKilometraje" minOccurs="0"/>
+        <xsd:element name="matricula" type="tipoMatricula"/>
+        <xsd:element name="propietario" type="tipoPropietario"/>
+        <xsd:element name="intervenciones" type="tipoIntervenciones"/>
+    </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="tipoTaller">
+    <xsd:sequence>
+        <xsd:element name="vehiculo" type="tipoVehiculo" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+</xsd:complexType>
+
+
+<!--Elemento raíz-->
+<xsd:element name="taller" type="tipoTaller"/>
+
+</xsd:schema>

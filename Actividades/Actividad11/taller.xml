@@ -1,0 +1,34 @@
+<taller>
+    <vehiculo>
+        <entrada fecha="18-02-2026"/>
+        <marca modelo="X2" year="2024">BMW</marca>
+        <kilometraje km="28143"/>
+        <matricula pais="ES">MXX1234</matricula>
+        <propietario empresa="false">
+            <nombre>Patricia González Marco</nombre>
+            <direccion>
+                <nombreVia>Los Olivos</nombreVia>
+                <numero portal="3A">121</numero>
+                <municipio CP="38430">Icod de los Vinos</municipio>
+                <provincia>S/C de Tenerife</provincia>
+            </direccion>
+            <contacto>
+                <telefono tipo="fijo">922922922</telefono>
+                <telefono tipo="móvil">616161616</telefono>
+                <telefono tipo="móvil">626262626</telefono>
+                <email>patricia@gmail.com</email>
+            </contacto>
+        </propietario>
+        <intervenciones tipo="mantenimiento">
+            <cambio elemento="aceite" precio="108.23€"/>
+            <cambio elemento="filtro" precio="77.31€"/>
+            <cambio elemento="bujías" precio="212.12€"/>
+            <otro>
+                <descripción precio="34.55€">
+Reemplazar bombillo de intermitente delantero izquierdo
+                </descripción>
+                <descripción precio="305.12€">Cambiar el condensador de fluzo</descripción>
+            </otro>
+        </intervenciones>
+    </vehiculo>
+</taller>
