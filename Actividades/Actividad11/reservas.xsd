@@ -1,0 +1,161 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--
+ =========================
+       TIPOS SIMPLES RESTRINGIDOS
+       ========================= 
+-->
+    <xsd:simpleType name="ReservaIdType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="R-\d{8}-\d{6}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="EstadoReservaType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="pendiente"/>
+            <xsd:enumeration value="confirmada"/>
+            <xsd:enumeration value="cancelada"/>
+            <xsd:enumeration value="no_presentado"/>
+            <xsd:enumeration value="finalizada"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="ZonaType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="interior"/>
+            <xsd:enumeration value="terraza"/>
+            <xsd:enumeration value="barra"/>
+            <xsd:enumeration value="privado"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="NumeroPersonasType">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="20"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="TelefonoType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="(\+\d{1,3}\d{6,12})|(\d{9})"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="ImporteType">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:fractionDigits value="2"/>
+            <xsd:minInclusive value="0.00"/>
+            <xsd:maxInclusive value="9999.99"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!--
+ =========================
+       ELEMENTO RAÍZ
+       ========================= 
+-->
+    <xsd:element name="reservas" type="ReservasType"/>
+    <!--
+ =========================
+       COMPLEJOS: SOLO HIJOS
+       ========================= 
+-->
+    <xsd:complexType name="ReservasType">
+        <xsd:sequence>
+            <xsd:element name="restaurante" type="RestauranteType"/>
+            <xsd:element name="reserva" type="ReservaType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RestauranteType">
+        <xsd:sequence>
+            <xsd:element name="nombre" type="xsd:string"/>
+            <xsd:element name="direccion" type="DireccionType"/>
+            <xsd:element name="telefono" type="TelefonoType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DireccionType">
+        <xsd:sequence>
+            <xsd:element name="calle" type="xsd:string"/>
+            <xsd:element name="ciudad" type="xsd:string"/>
+            <xsd:element name="cp" type="xsd:string"/>
+            <xsd:element name="pais" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ReservaType">
+        <xsd:sequence>
+            <xsd:element name="cliente" type="ClienteType"/>
+            <xsd:element name="servicio" type="ServicioType"/>
+            <xsd:element name="mesa" type="MesaType"/>
+            <xsd:element name="pago" type="PagoType" minOccurs="0"/>
+            <xsd:element name="notas" type="NotasType" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="ReservaIdType" use="required"/>
+        <xsd:attribute name="estado" type="EstadoReservaType" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="ClienteType">
+        <xsd:sequence>
+            <xsd:element name="nombre" type="xsd:string"/>
+            <xsd:element name="telefono" type="TelefonoType"/>
+            <xsd:element name="email" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="tags" type="TagsType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ServicioType">
+        <xsd:sequence>
+            <xsd:element name="fecha" type="xsd:date"/>
+            <xsd:element name="hora" type="xsd:time"/>
+            <xsd:element name="personas" type="NumeroPersonasType"/>
+        </xsd:sequence>
+        <xsd:attribute name="zona" type="ZonaType"/>
+    </xsd:complexType>
+    <xsd:complexType name="MesaType">
+        <xsd:sequence>
+            <xsd:element name="numero" type="xsd:positiveInteger"/>
+            <xsd:element name="capacidad" type="xsd:positiveInteger"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+ =========================
+       ELEMENTOS VACÍOS (solo atributos)
+       ========================= 
+-->
+    <xsd:complexType name="TagEmptyType">
+        <xsd:attribute name="nombre" type="xsd:string" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="PreferenciaEmptyType">
+        <xsd:attribute name="codigo" type="xsd:string" use="required"/>
+        <xsd:attribute name="valor" type="xsd:string"/>
+    </xsd:complexType>
+    <xsd:complexType name="TagsType">
+        <xsd:sequence>
+            <xsd:element name="tag" type="TagEmptyType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--
+ =========================
+       ELEMENTOS CON ATRIBUTOS + CONTENIDO
+       ========================= 
+-->
+    <xsd:complexType name="ImporteConMonedaType">
+        <xsd:simpleContent>
+            <xsd:extension base="ImporteType">
+                <xsd:attribute name="moneda" type="xsd:string" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="PagoType">
+        <xsd:sequence>
+            <xsd:element name="importe" type="ImporteConMonedaType"/>
+            <xsd:element name="metodo" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="NotaType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="tipo" type="xsd:string" use="required"/>
+                <xsd:attribute name="fecha" type="xsd:dateTime"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="NotasType">
+        <xsd:sequence>
+            <xsd:element name="nota" type="NotaType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

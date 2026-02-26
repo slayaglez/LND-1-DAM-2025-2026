@@ -1,0 +1,43 @@
+<reservas>
+    <restaurante>
+        <nombre>Casa Ivanna</nombre>
+        <direccion>
+            <calle>Paseo Ivanna</calle>
+            <ciudad>Los Realejos</ciudad>
+            <cp>38412</cp>
+            <pais>España</pais>
+        </direccion>
+        <telefono>612345678</telefono>
+    </restaurante>
+    <reserva id="R-12345678-123456" estado="confirmada">
+        <cliente>
+            <nombre>Sebastian</nombre>
+            <telefono>666999666</telefono>
+            <email>slayaglez@gmail.com</email>
+            <tags>
+                <tag nombre="Guachinche"></tag>
+            </tags>
+        </cliente>
+        <servicio zona="interior"> <!--enum-->
+            <fecha>2000-10-20</fecha>
+            <hora>12:30:00</hora>
+            <personas>15</personas>
+        </servicio>
+        <mesa>
+            <numero>4</numero>
+            <capacidad>25</capacidad>
+        </mesa>
+        <pago>
+            <importe moneda="EUR">125.99</importe>
+            <metodo>Tarjeta</metodo>
+        </pago>
+        <notas>
+            <nota tipo="Ruidosos" fecha="2000-10-20T14:15:00">
+            </nota>
+            <nota tipo="Bostiones" fecha="2000-10-20T14:15:00">
+            </nota>
+            <nota tipo="Con mucha plata" fecha="2000-10-20T14:15:00">
+            </nota>
+        </notas>
+    </reserva>
+</reservas>
