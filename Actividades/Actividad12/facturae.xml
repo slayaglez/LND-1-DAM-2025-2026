@@ -1,0 +1,8 @@
+<Facturae>
+    <FileHeader></FileHeader>
+    <Parties>
+        <SellerParty></SellerParty>
+        <BuyerParty></BuyerParty>
+    </Parties>
+    <Invoice></Invoice>
+</Facturae>
