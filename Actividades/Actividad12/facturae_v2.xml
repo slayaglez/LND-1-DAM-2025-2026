@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fe:Facturae xmlns:fe="http://www.facturae.gob.es/formato/Version3_2_2/Facturae32_2.xsd"
+             xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.facturae.gob.es/formato/Version3_2_2/Facturae32_2.xsd">
+
+  <FileHeader>
+    <SchemaVersion>3.2.2</SchemaVersion>
+    <Modality>I</Modality>
+    <InvoiceIssuerType>SE</InvoiceIssuerType>
+    <Batch>
+      <BatchIdentifier>LND-2026-777</BatchIdentifier>
+      <InvoicesCount>1</InvoicesCount>
+      <TotalInvoicesAmount>
+        <TotalAmount>23251.97</TotalAmount>
+      </TotalInvoicesAmount>
+      <TotalOutstandingAmount>
+        <TotalAmount>23251.97</TotalAmount>
+      </TotalOutstandingAmount>
+      <TotalExecutableAmount>
+        <TotalAmount>23251.97</TotalAmount>
+      </TotalExecutableAmount>
+      <InvoiceCurrencyCode>EUR</InvoiceCurrencyCode>
+    </Batch>
+  </FileHeader>
+
+  <Parties>
+
+    <!-- Emisor -->
+    <SellerParty>
+      <TaxIdentification>
+        <PersonTypeCode>J</PersonTypeCode>
+        <ResidenceTypeCode>R</ResidenceTypeCode>
+        <TaxIdentificationNumber>B12345678</TaxIdentificationNumber>
+      </TaxIdentification>
+      <LegalEntity>
+        <CorporateName>Programas a la carta S.L.</CorporateName>
+        <AddressInSpain>
+          <Address>C/ El Puerto de Indias, 23</Address>
+          <PostCode>38430</PostCode>
+          <Town>Icod de los Vinos</Town>
+          <Province>S/C de Tenerife</Province>
+          <CountryCode>ESP</CountryCode>
+        </AddressInSpain>
+      </LegalEntity>
+    </SellerParty>
+
+    <!-- Receptor -->
+    <BuyerParty>
+      <TaxIdentification>
+        <PersonTypeCode>F</PersonTypeCode>
+        <ResidenceTypeCode>R</ResidenceTypeCode>
+        <TaxIdentificationNumber>12345678K</TaxIdentificationNumber>
+      </TaxIdentification>
+      <Individual>
+        <Name>Juan</Name>
+        <FirstSurname>de la Cierva</FirstSurname>
+        <SecondSurname>Valverde</SecondSurname>
+        <AddressInSpain>
+          <Address>Avda. Los Romeros, 34, Portal B, 4ºC</Address>
+          <PostCode>38112</PostCode>
+          <Town>S/C de Tenerife</Town>
+          <Province>S/C de Tenerife</Province>
+          <CountryCode>ESP</CountryCode>
+        </AddressInSpain>
+      </Individual>
+    </BuyerParty>
+
+  </Parties>
+
+  <Invoices>
+    <Invoice>
+
+      <InvoiceHeader>
+        <InvoiceNumber>2026-777</InvoiceNumber>
+        <InvoiceSeriesCode>LND</InvoiceSeriesCode>
+        <InvoiceDocumentType>FC</InvoiceDocumentType>
+        <InvoiceClass>OO</InvoiceClass>
+      </InvoiceHeader>
+
+      <InvoiceIssueData>
+        <IssueDate>2026-03-20</IssueDate>
+        <InvoiceCurrencyCode>EUR</InvoiceCurrencyCode>
+        <TaxCurrencyCode>EUR</TaxCurrencyCode>
+        <LanguageName>es</LanguageName>
+      </InvoiceIssueData>
+
+      <!-- Impuestos -->
+      <TaxesOutputs>
+        <Tax>
+          <TaxTypeCode>05</TaxTypeCode>
+          <TaxRate>7.00</TaxRate>
+          <TaxableBase>
+            <TotalAmount>21730.81</TotalAmount>
+          </TaxableBase>
+          <TaxAmount>
+            <TotalAmount>1521.16</TotalAmount>
+          </TaxAmount>
+        </Tax>
+      </TaxesOutputs>
+
+      <!-- Totales -->
+      <InvoiceTotals>
+        <TotalGrossAmount>21730.81</TotalGrossAmount>
+        <TotalGeneralDiscounts>0.00</TotalGeneralDiscounts>
+        <TotalGeneralSurcharges>0.00</TotalGeneralSurcharges>
+        <TotalGrossAmountBeforeTaxes>21730.81</TotalGrossAmountBeforeTaxes>
+        <TotalTaxOutputs>1521.16</TotalTaxOutputs>
+        <TotalTaxesWithheld>0.00</TotalTaxesWithheld>
+        <InvoiceTotal>23251.97</InvoiceTotal>
+        <TotalOutstandingAmount>23251.97</TotalOutstandingAmount>
+        <TotalExecutableAmount>23251.97</TotalExecutableAmount>
+      </InvoiceTotals>
+
+      <Items>
+        <!-- Aplicación web -->
+        <InvoiceLine>
+          <ItemDescription>Aplicación web para control domótico</ItemDescription>
+          <Quantity>1.00</Quantity>
+          <UnitOfMeasure>01</UnitOfMeasure>
+          <UnitPriceWithoutTax>13125.34</UnitPriceWithoutTax>
+          <TotalCost>13125.34</TotalCost>
+          <DiscountsAndRebates/>
+          <Charges/>
+          <GrossAmount>13125.34</GrossAmount>
+          <TaxesOutputs>
+            <Tax>
+              <TaxTypeCode>05</TaxTypeCode>
+              <TaxRate>7.00</TaxRate>
+              <TaxableBase>
+                <TotalAmount>13125.34</TotalAmount>
+              </TaxableBase>
+              <TaxAmount>
+                <TotalAmount>918.77</TotalAmount>
+              </TaxAmount>
+            </Tax>
+          </TaxesOutputs>
+          <LineItemPeriod/>
+          <TransactionDate>2026-03-20</TransactionDate>
+        </InvoiceLine>
+
+        <!-- Servidor front -->
+        <InvoiceLine>
+          <ItemDescription>Servidor front con todas sus cositas</ItemDescription>
+          <Quantity>2.00</Quantity>
+          <UnitOfMeasure>01</UnitOfMeasure>
+          <UnitPriceWithoutTax>3100.12</UnitPriceWithoutTax>
+          <TotalCost>6200.24</TotalCost>
+          <DiscountsAndRebates/>
+          <Charges/>
+          <GrossAmount>6200.24</GrossAmount>
+          <TaxesOutputs>
+            <Tax>
+              <TaxTypeCode>05</TaxTypeCode>
+              <TaxRate>7.00</TaxRate>
+              <TaxableBase>
+                <TotalAmount>6200.24</TotalAmount>
+              </TaxableBase>
+              <TaxAmount>
+                <TotalAmount>434.02</TotalAmount>
+              </TaxAmount>
+            </Tax>
+          </TaxesOutputs>
+          <LineItemPeriod/>
+          <TransactionDate>2026-03-20</TransactionDate>
+        </InvoiceLine>
+
+        <!--Servidor back -->
+        <InvoiceLine>
+          <ItemDescription>Servidor back con todas sus cositas</ItemDescription>
+          <Quantity>1.00</Quantity>
+          <UnitOfMeasure>01</UnitOfMeasure>
+          <UnitPriceWithoutTax>2405.23</UnitPriceWithoutTax>
+          <TotalCost>2405.23</TotalCost>
+          <DiscountsAndRebates/>
+          <Charges/>
+          <GrossAmount>2405.23</GrossAmount>
+          <TaxesOutputs>
+            <Tax>
+              <TaxTypeCode>05</TaxTypeCode>
+              <TaxRate>7.00</TaxRate>
+              <TaxableBase>
+                <TotalAmount>2405.23</TotalAmount>
+              </TaxableBase>
+              <TaxAmount>
+                <TotalAmount>168.37</TotalAmount>
+              </TaxAmount>
+            </Tax>
+          </TaxesOutputs>
+          <LineItemPeriod/>
+          <TransactionDate>2026-03-20</TransactionDate>
+        </InvoiceLine>
+
+      </Items>
+
+      <!-- Forma de pago -->
+      <PaymentDetails>
+        <Installment>
+          <InstallmentDueDate>2026-03-20</InstallmentDueDate>
+          <InstallmentAmount>23251.97</InstallmentAmount>
+          <PaymentMeans>04</PaymentMeans>
+          <AccountToBeCredited>
+            <IBAN>ES9921005512121210001234</IBAN>
+          </AccountToBeCredited>
+        </Installment>
+      </PaymentDetails>
+
+    </Invoice>
+  </Invoices>
+
+</fe:Facturae>
