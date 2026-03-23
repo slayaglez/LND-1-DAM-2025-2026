@@ -1,5 +1,9 @@
 <Facturae>
-    <FileHeader></FileHeader>
+    <FileHeader>
+        <SchemaVersion>Hola</SchemaVersion>
+        <Modality></Modality>
+        <InvoiceIssuerType></InvoiceIssuerType>
+    </FileHeader>
     <Parties>
         <SellerParty></SellerParty>
         <BuyerParty></BuyerParty>
