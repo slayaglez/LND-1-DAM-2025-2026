@@ -32,13 +32,23 @@
                         <th>Categoría</th>
                     </tr>
                     <xsl:for-each select="//libro">
+                        <xsl:sort select="titulo" data-type="text"/>
                         <tr>
-                            <td><xsl:value-of select="titulo"/></td>
-                            <td><xsl:value-of select="precio"/> €</td>
-                            <td><xsl:value-of select="@categoria"/></td>
+                            <xsl:if test="@categoria='novela'">
+                                <td style="color:red;"><xsl:value-of select="titulo"/></td>
+                                <td style="color:red;"><xsl:value-of select="precio"/> €</td>
+                                <td style="color:red;"><xsl:value-of select="@categoria"/></td>
+                            </xsl:if>
+
+                            <xsl:if test="@categoria!='novela'">
+                                <td><xsl:value-of select="titulo"/></td>
+                                <td><xsl:value-of select="precio"/> €</td>
+                                <td><xsl:value-of select="@categoria"/></td>
+                            </xsl:if>
                         </tr>
                     </xsl:for-each>   
                 </table>
+                
             </body>
         </html>
     </xsl:template>
