@@ -21,6 +21,10 @@ Todas las actividades de la asignatura lenguaje de marcas estarán aquí listada
 - [2do Trimestre](#2do-trimestre)
    * [Actividad 8](#actividad-8)
    * [Actividad 9](#actividad-9)
+   * [Actividad 10](#actividad-10)
+   * [Actividad 11](#actividad-11)
+   * [Actividad 12](#actividad-12)
+   * [Actividad 13](#actividad-13)
 - [Exámenes](#exámenes)
 
 ## Cheat Sheets
@@ -64,6 +68,18 @@ Con solo HTML hacemos un formulario que acciona una bombilla a través de su IP
 
 ### Actividad 9
 Introducción a XML y XSD, para validar los archivos se recomienda el uso de la siguiente [página](http://lnd.angelmelchor.pro/xsl/)
+
+### Actividad 10
+Continuación con XML y XSD, para validar los archivos se recomienda el uso de la siguiente [página](http://lnd.angelmelchor.pro/xsl/)
+
+### Actividad 11
+Continuación con XML y XSD, para validar los archivos se recomienda el uso de la siguiente [página](http://lnd.angelmelchor.pro/xsl/)
+
+### Actividad 12
+Continuación con XML y XSD, para validar los archivos se recomienda el uso de la siguiente [página](http://lnd.angelmelchor.pro/xsl/)
+
+### Actividad 13
+Introducción a XSL para construir los archivos se recomienda el uso de la siguiente [página](http://lnd.angelmelchor.pro/xsl/)
 
 <br>
 <br>
