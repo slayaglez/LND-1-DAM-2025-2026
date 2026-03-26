@@ -1,0 +1,42 @@
+<libreria>
+    <libro categoria="novela">
+        <titulo>Cien años de soledad</titulo>
+        <precio>19.95</precio>
+    </libro>
+    <libro categoria="divulgacion">
+        <titulo>Breves respuestas a las grandes preguntas</titulo>
+        <precio>15.50</precio>
+    </libro>
+    <libro categoria="tecnico">
+        <titulo>Clean Code</titulo>
+        <precio>32.00</precio>
+    </libro>
+    <libro categoria="novela">
+        <titulo>El nombre del viento</titulo>
+        <precio>22.90</precio>
+    </libro>
+    <libro categoria="historia">
+        <titulo>Sapiens: De animales a dioses</titulo>
+        <precio>18.75</precio>
+    </libro>
+    <libro categoria="tecnico">
+        <titulo>Introducción a los algoritmos</titulo>
+        <precio>45.00</precio>
+    </libro>
+    <libro categoria="divulgacion">
+        <titulo>El universo en una cáscara de nuez</titulo>
+        <precio>17.20</precio>
+    </libro>
+    <libro categoria="novela">
+        <titulo>1984</titulo>
+        <precio>14.60</precio>
+    </libro>
+    <libro categoria="filosofia">
+        <titulo>El mundo de Sofía</titulo>
+        <precio>16.80</precio>
+    </libro>
+    <libro categoria="tecnico">
+        <titulo>Python Crash Course</titulo>
+        <precio>29.99</precio>
+    </libro>
+</libreria>
