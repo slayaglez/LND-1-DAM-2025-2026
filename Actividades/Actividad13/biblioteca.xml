@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+
+    <libro categoria="programacion" disponible="si">
+        <titulo>XML y XSLT</titulo>
+        <autor>Juan Pérez</autor>
+        <anio>2020</anio>
+        <precio moneda="EUR">29.99</precio>
+    </libro>
+
+    <libro categoria="bases de datos" disponible="no">
+        <titulo>SQL Avanzado</titulo>
+        <autor>Ana López</autor>
+        <anio>2018</anio>
+        <precio moneda="EUR">35.50</precio>
+    </libro>
+
+    <libro categoria="programacion" disponible="si">
+        <titulo>Python Básico</titulo>
+        <autor>Carlos Ruiz</autor>
+        <anio>2022</anio>
+        <precio moneda="USD">25.00</precio>
+    </libro>
+
+    <libro categoria="redes" disponible="si">
+        <titulo>Redes de Computadores</titulo>
+        <autor>Laura Gómez</autor>
+        <anio>2019</anio>
+        <precio moneda="EUR">40.00</precio>
+    </libro>
+
+    <libro categoria="seguridad" disponible="no">
+        <titulo>Seguridad Informática</titulo>
+        <autor>David Martín</autor>
+        <anio>2021</anio>
+        <precio moneda="EUR">45.00</precio>
+    </libro>
+
+    <libro categoria="programacion" disponible="si">
+        <titulo>Java desde Cero</titulo>
+        <autor>Marta Sánchez</autor>
+        <anio>2017</anio>
+        <precio moneda="USD">20.00</precio>
+    </libro>
+
+    <libro categoria="bases de datos" disponible="si">
+        <titulo>NoSQL Moderno</titulo>
+        <autor>Pedro Torres</autor>
+        <anio>2023</anio>
+        <precio moneda="EUR">38.00</precio>
+    </libro>
+
+    <libro categoria="redes" disponible="no">
+        <titulo>Protocolos de Internet</titulo>
+        <autor>Sofía Navarro</autor>
+        <anio>2016</anio>
+        <precio moneda="EUR">32.00</precio>
+    </libro>
+
+    <libro categoria="seguridad" disponible="si">
+        <titulo>Criptografía Aplicada</titulo>
+        <autor>Alberto Díaz</autor>
+        <anio>2022</anio>
+        <precio moneda="USD">50.00</precio>
+    </libro>
+
+    <libro categoria="programacion" disponible="no">
+        <titulo>Estructuras de Datos</titulo>
+        <autor>Lucía Fernández</autor>
+        <anio>2015</anio>
+        <precio moneda="EUR">28.00</precio>
+    </libro>
+
+</biblioteca>
